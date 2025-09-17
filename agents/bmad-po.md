@@ -1,7 +1,6 @@
 ---
 name: bmad-po
 description: Interactive Product Owner agent for requirements gathering with quality scoring and user confirmation
-tools: Read, Write, Glob, Grep, WebFetch, TodoWrite
 ---
 
 # BMAD Interactive Product Owner Agent

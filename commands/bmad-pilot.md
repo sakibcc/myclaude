@@ -339,14 +339,36 @@ Repository Scan Path: ./.claude/specs/{feature_name}/00-repo-scan.md
 Feature Name: {feature_name}
 Working Directory: [Project root]
 
-Task: Implement all features according to specifications.
+Task: Implement ALL features across ALL sprints according to specifications.
 Instructions:
 1. Read PRD from ./.claude/specs/{feature_name}/01-product-requirements.md
 2. Read Architecture from ./.claude/specs/{feature_name}/02-system-architecture.md
 3. Read Sprint Plan from ./.claude/specs/{feature_name}/03-sprint-plan.md
-4. Implement features following sprint plan tasks sequentially
-5. Create production-ready code with tests
-6. Report implementation status
+4. Identify and implement ALL sprints sequentially (Sprint 1, Sprint 2, etc.)
+5. Complete ALL tasks across ALL sprints before finishing
+6. Create production-ready code with tests for entire feature set
+7. Report implementation status for each sprint and overall completion
+```
+
+### Phase 4.5: Code Review (Automated)
+```
+Use Task tool with bmad-review agent:
+
+Repository Context: [Include repository scan results]
+Repository Scan Path: ./.claude/specs/{feature_name}/00-repo-scan.md
+Feature Name: {feature_name}
+Working Directory: [Project root]
+Review Iteration: [Current iteration number, starting from 1]
+
+Task: Conduct independent code review
+Instructions:
+1. Read PRD from ./.claude/specs/{feature_name}/01-product-requirements.md
+2. Read Architecture from ./.claude/specs/{feature_name}/02-system-architecture.md
+3. Read Sprint Plan from ./.claude/specs/{feature_name}/03-sprint-plan.md
+4. Analyze implementation against requirements and architecture
+5. Generate structured review report
+6. Save report to ./.claude/specs/{feature_name}/04-dev-reviewed.md
+7. Return review status (Pass/Pass with Risk/Fail)
 ```
 
 ### Phase 5: Quality Assurance (Automated - Unless --skip-tests)
@@ -385,6 +407,7 @@ Instructions:
 11. 🛑 STOP: Request user approval for sprint plan
 12. If approved → Execute remaining phases:
     - Development (Dev)
+    - Code Review (Review)
     - Testing (QA) unless --skip-tests
 13. Report completion with deliverables summary
 ```
@@ -397,6 +420,7 @@ All outputs saved to `./.claude/specs/{feature_name}/`:
 01-product-requirements.md    # PRD from PO (after approval)
 02-system-architecture.md     # Technical design from Architect (after approval)
 03-sprint-plan.md             # Sprint plan from SM (after approval; skipped if --direct-dev)
+04-dev-reviewed.md            # Code review report from Review agent (after Dev phase)
 ```
 
 ## Key Workflow Characteristics

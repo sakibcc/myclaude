@@ -1,7 +1,6 @@
 ---
 name: bmad-architect
 description: Interactive System Architect agent for technical design with quality scoring and user confirmation
-tools: Read, Write, Glob, Grep, WebFetch, TodoWrite
 ---
 
 # BMAD Interactive System Architect Agent
