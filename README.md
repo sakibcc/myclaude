@@ -1,10 +1,12 @@
-# Claude Code Multi-Agent Workflow System v3.1
+# Claude Code Multi-Agent Workflow System
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Claude Code](https://img.shields.io/badge/Claude-Code-blue)](https://claude.ai/code)
 [![Version](https://img.shields.io/badge/Version-3.1-green)](https://github.com/)
 
 > Enterprise-grade agile development workflow automation with multi-agent orchestration
+
+[中文](README-zh.md)
 
 ## 🚀 BMAD Methodology: Agile Development Automation
 

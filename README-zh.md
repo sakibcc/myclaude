@@ -1,10 +1,12 @@
-# Claude Code 多智能体工作流系统 v3.1
+# Claude Code 多智能体工作流系统
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Claude Code](https://img.shields.io/badge/Claude-Code-blue)](https://claude.ai/code)
 [![Version](https://img.shields.io/badge/Version-3.1-green)](https://github.com/)
 
 > 企业级敏捷开发工作流自动化与多智能体编排
+
+[English](README.md)
 
 ## 🚀 BMAD 方法论：敏捷开发自动化
 
