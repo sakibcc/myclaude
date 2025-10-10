@@ -2,7 +2,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Claude Code](https://img.shields.io/badge/Claude-Code-blue)](https://claude.ai/code)
-[![Version](https://img.shields.io/badge/Version-3.1-green)](https://github.com/)
+[![Version](https://img.shields.io/badge/Version-3.2-green)](https://github.com/)
+[![Plugin Ready](https://img.shields.io/badge/Plugin-Ready-purple)](https://docs.claude.com/en/docs/claude-code/plugins)
 
 > 企业级敏捷开发工作流自动化与多智能体编排
 
@@ -52,7 +53,25 @@ graph LR
 
 ## 🚀 快速开始
 
-### 一键安装
+### 安装方法
+
+#### 方法1：插件系统（推荐）🎯
+
+```bash
+# 列出所有可用插件
+/plugin list
+
+# 安装特定工作流插件
+/plugin install bmad-agile-workflow         # BMAD 方法论
+/plugin install requirements-driven-development  # Requirements 工作流
+/plugin install development-essentials      # 核心开发命令
+/plugin install advanced-ai-agents         # GPT-5 集成
+
+# 查看插件详情
+/plugin info bmad-agile-workflow
+```
+
+#### 方法2：传统安装
 
 ```bash
 # 克隆仓库
@@ -107,7 +126,44 @@ BMAD 工作流使用专门的输出样式：
 - 处理确认门控
 - 支持 Codex CLI 集成
 
-## ⚡ v3.1 新特性
+## ⚡ v3.2 插件系统
+
+### 🔌 原生插件支持（新增）
+本项目现已包含原生 Claude Code 插件支持，提供4个即装即用的插件包：
+
+#### 可用插件
+
+| 插件 | 描述 | 命令 | 智能体 |
+|------|------|------|--------|
+| **bmad-agile-workflow** | 完整 BMAD 方法论及角色化智能体 | `/bmad-pilot` | bmad-po, bmad-architect, bmad-sm, bmad-dev, bmad-qa |
+| **requirements-driven-development** | 精简需求工作流 | `/requirements-pilot` | requirements-generate, requirements-code, requirements-review |
+| **development-essentials** | 核心开发命令 | `/code`, `/debug`, `/test`, `/optimize` | code, bugfix, debug, develop |
+| **advanced-ai-agents** | GPT-5 深度分析集成 | - | gpt5 |
+
+#### 使用插件
+
+```bash
+# 列出所有可用插件
+/plugin list
+
+# 获取插件详细信息
+/plugin info bmad-agile-workflow
+
+# 安装插件以激活其命令和智能体
+/plugin install requirements-driven-development
+
+# 移除已安装的插件
+/plugin remove development-essentials
+```
+
+#### 插件配置
+插件定义在 `.claude-plugin/marketplace.json`，遵循 Claude Code 插件规范。每个插件包含：
+- 命令（斜杠命令）
+- 智能体（专业 AI 智能体）
+- 元数据（版本、作者、关键词）
+- 类别分类
+
+## ⚡ v3.1 特性
 
 ### 独立代码审查智能体
 - **bmad-review**：Dev 和 QA 之间的自动审查
@@ -214,8 +270,10 @@ MIT 许可证 - 查看 [LICENSE](LICENSE) 文件
 ## 🙋 支持
 
 - **文档**：查看 `/commands/` 和 `/agents/` 目录
+- **插件指南**：查看 [PLUGIN_README.md](PLUGIN_README.md) 了解插件系统详情
 - **问题**：GitHub issues 用于报告 bug 和功能请求
 - **Makefile 帮助**：运行 `make help` 查看所有部署选项
+- **Claude Code 文档**：[插件系统](https://docs.claude.com/en/docs/claude-code/plugins)
 
 ### 可用的 Make 命令
 
@@ -234,5 +292,7 @@ make help               # 显示所有可用命令
 ---
 
 **使用 BMAD 转型您的开发** - 一条命令，完整敏捷工作流，质量保证。
+
+*通过 `/plugin install bmad-agile-workflow` 安装或使用传统安装方法。*
 
 *让专业的 AI 智能体处理专业工作。*
